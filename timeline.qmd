@@ -1,10 +1,8 @@
 ---
 title: "Timeline"
-description: "Milestones on the road to TCS graduate school"
+description: "TCS 대학원에 가는 여정"
 toc: false
 ---
-
-A chronological record of degrees, coursework, and study milestones. Newest first.
 
 |    When    | What |
 |------------|------|
