@@ -1,0 +1,6 @@
+/_site/
+/.quarto/
+/.luarc.json
+*_files/
+
+**/*.quarto_ipynb

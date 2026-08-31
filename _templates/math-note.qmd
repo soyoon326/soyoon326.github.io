@@ -1,0 +1,26 @@
+---
+title: "<Topic>: an exercise / counterexample / alternative proof"
+description: "What's non-obvious here, in one line."
+date: YYYY-MM-DD
+categories: [math notes]
+draft: true
+---
+
+<!-- Not a summary. Only things with my own contribution:
+     a hard exercise, an alternative proof, a counterexample,
+     or a misconception I had to unlearn. -->
+
+## The question
+
+::: {#exr-NAME}
+Source (book, chapter, problem number) and statement.
+:::
+
+## Solution
+
+::: {.proof}
+:::
+
+## What I initially got wrong
+
+The misconception, and the example that killed it.

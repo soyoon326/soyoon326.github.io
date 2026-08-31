@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Soyoon's TCS Log"
+  description: "Study notes, proof reconstructions, and a research log on the road to theoretical computer science"
+  site-url: https://soyoon326.github.io
+  repo-url: https://github.com/soyoon326/soyoon326.github.io
+  favicon: favicon.svg
+  navbar:
+    left:
+      - text: "Posts"
+        href: index.qmd
+      - text: "Timeline"
+        href: timeline.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/soyoon326
+      - icon: rss
+        href: index.xml
+  page-footer:
+    center: "© 2026 Soyoon Kim · Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [darkly, theme-dark.scss]
+    css: styles.css
+    html-math-method: katex
+    toc: true
+    code-copy: true
+    link-external-newwindow: true
+
+lang: en

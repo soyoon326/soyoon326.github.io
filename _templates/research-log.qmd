@@ -1,0 +1,23 @@
+---
+title: "Research log: <project> — week N"
+description: "What moved this week, in one line."
+date: YYYY-MM-DD
+categories: [research log]
+draft: true
+---
+
+## Goal (unchanged / revised)
+
+Current problem statement, as precisely as I can state it today.
+
+## What I tried
+
+Approaches attempted this week, including dead ends and *why* they died.
+
+## What I learned
+
+Partial results, sharpened conjectures, relevant literature found.
+
+## Next
+
+The single most promising next step, and why.

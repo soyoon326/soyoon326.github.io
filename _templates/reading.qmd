@@ -1,0 +1,19 @@
+---
+title: "Reading <book>, chapters X–Y"
+description: "Depth reached and the one idea worth keeping."
+date: YYYY-MM-DD
+categories: [reading]
+draft: true
+---
+
+## Coverage
+
+Which chapters, at what depth (skimmed / read / all exercises done).
+
+## The one idea worth keeping
+
+Not a summary — the single insight I'd tell someone about.
+
+## Exercises attempted
+
+Links to related math-notes posts for the hard ones.

@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Source Sans 3", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+$headings-font-weight: 600;
+$link-color: #1a5fb4;
+
+/*-- scss:rules --*/
+
+// ---------- Theorem-like environments ----------
+// Quarto renders ::: {#thm-*} etc. as divs with these classes.
+
+.theorem,
+.lemma,
+.corollary,
+.proposition,
+.conjecture {
+  border-left: 4px solid #1a5fb4;
+  background: rgba(26, 95, 180, 0.06);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.definition,
+.example {
+  border-left: 4px solid #26a269;
+  background: rgba(38, 162, 105, 0.06);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.exercise,
+.remark {
+  border-left: 4px solid #c64600;
+  background: rgba(198, 70, 0, 0.05);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.theorem .theorem-title,
+.lemma .theorem-title,
+.corollary .theorem-title,
+.proposition .theorem-title,
+.conjecture .theorem-title,
+.definition .theorem-title,
+.example .theorem-title,
+.exercise .theorem-title,
+.remark .theorem-title {
+  font-weight: 700;
+}
+
+.proof {
+  margin: 1.2rem 0 1.6rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px dashed var(--bs-border-color, #ccc);
+}
+
+.proof > *:last-child::after {
+  content: " ∎";
+  font-weight: 700;
+}
+
+// ---------- General polish ----------
+
+.quarto-title-banner {
+  background: linear-gradient(135deg, #163a5f, #1a5fb4);
+}
+
+.katex {
+  font-size: 1.06em;
+}
+
+.quarto-listing .listing-category {
+  border-radius: 999px;
+}

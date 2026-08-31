@@ -1,0 +1,72 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Source Sans 3", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+$headings-font-weight: 600;
+$link-color: #62a0ea;
+
+/*-- scss:rules --*/
+
+.theorem,
+.lemma,
+.corollary,
+.proposition,
+.conjecture {
+  border-left: 4px solid #62a0ea;
+  background: rgba(98, 160, 234, 0.1);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.definition,
+.example {
+  border-left: 4px solid #57e389;
+  background: rgba(87, 227, 137, 0.08);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.exercise,
+.remark {
+  border-left: 4px solid #ffa348;
+  background: rgba(255, 163, 72, 0.08);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+.theorem .theorem-title,
+.lemma .theorem-title,
+.corollary .theorem-title,
+.proposition .theorem-title,
+.conjecture .theorem-title,
+.definition .theorem-title,
+.example .theorem-title,
+.exercise .theorem-title,
+.remark .theorem-title {
+  font-weight: 700;
+}
+
+.proof {
+  margin: 1.2rem 0 1.6rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px dashed #555;
+}
+
+.proof > *:last-child::after {
+  content: " ∎";
+  font-weight: 700;
+}
+
+.quarto-title-banner {
+  background: linear-gradient(135deg, #0d2138, #163a5f);
+}
+
+.katex {
+  font-size: 1.06em;
+}
+
+.quarto-listing .listing-category {
+  border-radius: 999px;
+}

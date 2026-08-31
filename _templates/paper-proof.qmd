@@ -1,0 +1,41 @@
+---
+title: "Reconstructing <result> from <paper/book>"
+description: "One-line summary of the result and what reconstructing it taught me."
+date: YYYY-MM-DD
+categories: [paper proofs]
+bibliography: references.bib
+draft: true
+---
+
+<!-- Copy this folder into posts/YYYY-MM-DD-slug/ and set draft: false when ready. -->
+
+## The result
+
+::: {#thm-NAME}
+## Attribution
+
+Statement in my own words, with all quantifiers explicit.
+:::
+
+## My attempt before reading the proof
+
+What I tried, how far I got, where intuition ran out.
+
+## The actual proof, reconstructed
+
+::: {.proof}
+Written from memory after reading — not transcribed.
+:::
+
+## Gaps I had to fill
+
+Every "clearly", "it is easy to see", "left to the reader" — spelled out.
+
+## Stress-testing the theorem
+
+Which hypotheses are load-bearing? What breaks if I weaken one? Counterexamples.
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,18 @@
+---
+title: "Timeline"
+description: "Milestones on the road to TCS graduate school"
+toc: false
+---
+
+A chronological record of degrees, coursework, and study milestones. Newest first.
+
+| When | What |
+|------|------|
+| 2026-08 | Started this blog as a study log and portfolio |
+| _(add earlier milestones here)_ | |
+
+: {tbl-colwidths="[20,80]"}
+
+## Currently working through
+
+- _(list the books / papers you are actively studying, with links to related posts)_
