@@ -1,6 +1,6 @@
 ---
 title: "Timeline"
-description: "TCS 대학원에 가는 여정"
+description: "TCS 대학원으로 가는 여정"
 toc: false
 ---
 
