@@ -109,6 +109,16 @@ blockquote {
 
 .quarto-title-banner {
   background: linear-gradient(135deg, #163a5f, #1a5fb4);
+
+  // The gradient is dark, so force light text regardless of what the theme computed.
+  &, h1, .title, .subtitle, .description, p, a {
+    color: #ffffff;
+  }
+
+  .quarto-categories .quarto-category {
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .katex {
