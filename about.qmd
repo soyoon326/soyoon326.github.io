@@ -10,16 +10,25 @@ about:
 toc: false
 ---
 
-I'm **Soyoon Kim**, studying mathematics and theoretical computer science on my own, on the way to graduate school in TCS.
+안녕하세요! **김소윤**입니다. 국내 **이론 컴퓨터과학**(Theoretical Computer Science, TCS) 대학원 진학을 목표로 수학, 컴퓨터과학 등을 공부하고 있습니다.
 
-This blog is my working record — not a showcase of finished results, but the actual process:
+이 블로그는 공부한 내용들을 기록하기 위해 만들어졌습니다. 이 블로그는 다음과 같은 내용들로 이루어져 있습니다:
+**논문 증명**
+- 논문이나 고전적인 정리를 읽은 뒤, 자료를 덮고 스스로 증명 과정을 재구성해 봅니다.
+- 막혔던 부분, 놓쳤던 점 그리고 생략되어 제가 직접 채워 넣어야 했던 논리적 공백 등을 기록합니다.
 
-- **Paper proofs** — I read a paper or a classic result, close it, and try to reconstruct the proofs myself. Posts record where I got stuck, what the author saw that I didn't, and the gaps ("it is easy to see...") I had to fill in.
-- **Research log** — notes from my own small research attempts: problem statements, failed approaches, partial results.
-- **Math notes** — solutions to hard exercises, alternative proofs, counterexamples, and misconceptions I had to unlearn. Not textbook summaries.
-- **Reading** — what I'm reading, chapter by chapter, and at what depth.
-- **Milestones** — degree progress and other checkpoints, collected on the [Timeline](timeline.qmd) page.
+**연구 일지**
+- 소규모 연구 시도에 대한 기록입니다. 문제 정의, 실패한 접근 방식, 부분적인 결과 등을 담습니다.
 
-I'm taking a non-traditional path (a self-directed degree through Korea's Academic Credit Bank System), so this blog doubles as evidence of what and how I actually studied.
+**수학 노트**
+- 까다로운 연습문제 풀이, 다른 방식의 증명, 반례 등을 정리합니다.
 
-Interests: computational complexity, algorithms, logic.
+**독서**
+- 현재 읽고 있는 자료와 각 챕터를 어느 정도 깊이로 공부하고 있는지 기록합니다.
+
+**체크포인트**
+- 학위 취득 과정 및 기타 주요 단계들을 타임라인(Timeline) 페이지에 모아두었습니다.
+
+저는 '학점은행제'라는 비전통적인 경로를 밟고 있기에, 이 블로그가 저를 얼마나 TCS에 적합한 인물인지 보여주는 수단으로써도 가치 있다고 생각합니다.
+
+관심분야: 알고리즘
