@@ -6,13 +6,7 @@ toc: false
 
 A chronological record of degrees, coursework, and study milestones. Newest first.
 
-| When | What |
-|------|------|
-| 2026-08 | {{< fa rocket >}} Started this blog as a study log and portfolio |
-| _(add earlier milestones here)_ | |
-
-: {tbl-colwidths="[20,80]"}
-
-## {{< fa book-open >}} Currently working through
-
-- _(list the books / papers you are actively studying, with links to related posts)_
+|    When    | What |
+|------------|------|
+| 2026-08-31 | 블로그 시작  |
+| 2026-08-27 | 컴퓨터공학 학사 학위 취득 |
