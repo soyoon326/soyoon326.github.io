@@ -31,6 +31,7 @@ format:
       dark: [darkly, theme-dark.scss]
     css: styles.css
     html-math-method: katex
+    lightbox: true
     toc: true
     code-copy: true
     link-external-newwindow: true
