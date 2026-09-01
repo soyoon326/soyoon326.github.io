@@ -1,0 +1,97 @@
+---
+title: "Exercise: a non-regular language that survives the pumping lemma"
+description: "How I write up textbook exercises here — and a worked example that killed a misconception I'd been carrying."
+date: 2026-09-01
+categories: [math notes, automata]
+bibliography: references.bib
+---
+
+## How I write up exercises
+
+A solved exercise is only worth posting if it contains something a reader can't get from the answer key. So every post in this category has to earn its place with at least one of:
+
+- a **hard exercise** where the difficulty is in finding the idea, not in executing it,
+- an **alternative proof** that differs from the textbook's,
+- a **counterexample** I constructed, or
+- a **misconception** I held and had to unlearn.
+
+The structure below is what I use. The last section is the important one — it's the part that records how my understanding actually changed, and it's the reason these posts are worth writing rather than just doing the exercise on paper.
+
+This one qualifies on the last two counts.
+
+## The question
+
+::: {#exr-pumping}
+## Sipser, Exercise 1.54 (paraphrased)
+
+Let
+$$
+L = \{\, a^i b^j c^k \mid i, j, k \ge 0, \text{ and if } i \ge 1 \text{ then } j = k \,\}.
+$$
+Show that $L$ satisfies the conclusion of the pumping lemma, but is not regular. [@sipser2012]
+:::
+
+Unpacking the definition: a string of $L$ either has no $a$'s at all — in which case the $b$'s and $c$'s are unconstrained — or it has at least one $a$, and then the $b$ block and $c$ block must match in length. So
+
+$$
+L = \underbrace{\{\, b^j c^k \mid j,k \ge 0 \,\}}_{\text{no } a\text{'s: anything goes}} \;\cup\; \underbrace{\{\, a^i b^j c^j \mid i \ge 1,\, j \ge 0 \,\}}_{\text{at least one } a: \text{ must match}}.
+$$
+
+## Part 1: $L$ satisfies the pumping lemma
+
+::: {#prp-pumps}
+With pumping length $p = 1$, every $s \in L$ with $|s| \ge 1$ can be written as $s = xyz$ where $|xy| \le p$, $|y| \ge 1$, and $xy^m z \in L$ for all $m \ge 0$.
+:::
+
+::: {.proof}
+Take $x = \varepsilon$ and $y$ to be the first symbol of $s$, so $z$ is the rest. This satisfies $|xy| \le 1 = p$ and $|y| = 1 \ge 1$. Two cases, by that first symbol.
+
+**Case 1: $s$ starts with $a$.** Then $i \ge 1$, so $s = a^i b^j c^j$ with matching blocks. Pumping the leading $a$ gives $a^{i - 1 + m} b^j c^j$.
+
+- If $m \ge 1$, the exponent $i - 1 + m \ge 1$, so we still need matching blocks — and they still match. In $L$.
+- If $m = 0$, the exponent is $i - 1$, which may be $0$. But if there are no $a$'s, no constraint applies at all. In $L$.
+
+**Case 2: $s$ starts with $b$ or $c$.** Then $i = 0$, and $s = b^j c^k$ with $j, k$ arbitrary. Pumping the first symbol changes only $j$ (or only $k$), and leaves the string of the form $b^{j'} c^{k'}$ with no $a$'s. Since strings without $a$'s are unconstrained, it is in $L$.
+
+In both cases $xy^m z \in L$ for every $m \ge 0$.
+:::
+
+::: {.remark}
+Note what makes this work: the language has an **escape hatch**. Pumping down to $i = 0$ doesn't produce a string that violates the matching condition — it produces a string the matching condition doesn't apply to. The constraint isn't broken, it's switched off.
+:::
+
+## Part 2: $L$ is not regular
+
+The pumping lemma is now useless to me here, so I need a different tool. Closure properties give one.
+
+::: {.proof}
+Suppose $L$ were regular. The language $a b^* c^*$ is regular, and regular languages are closed under intersection, so
+$$
+L \cap a b^* c^* = \{\, a b^j c^j \mid j \ge 0 \,\} =: M
+$$
+would be regular. The intersection is exactly this because a string in $a b^* c^*$ has $i = 1 \ge 1$, which forces $j = k$.
+
+Now apply the pumping lemma to $M$. Let $p$ be its pumping length and take $s = a b^p c^p \in M$, which has $|s| = 2p + 1 \ge p$. Any split $s = xyz$ with $|xy| \le p$ and $|y| \ge 1$ puts $y$ inside the prefix $a b^{p-1}$, so $y$ is one of:
+
+- $y = a b^t$ for some $t \ge 0$: then $xy^2z$ contains two $a$'s, and no string of $M$ has two $a$'s.
+- $y = b^t$ for some $t \ge 1$: then $xy^2z = a b^{p+t} c^p$, and $p + t \ne p$, so the blocks no longer match.
+
+Either way $xy^2z \notin M$, contradicting the pumping lemma. So $M$ is not regular, and therefore neither is $L$.
+:::
+
+## What I initially got wrong
+
+I had been treating the pumping lemma as if it *characterized* the regular languages — as though "pumpable" and "regular" were the same thing. Stated plainly like that it's obviously wrong: the lemma is a one-way implication, and a one-way implication can only ever be used to prove non-regularity, never regularity.
+
+But knowing that sentence and *using* it correctly turned out to be different things. My tell was that when a pumping argument failed to produce a contradiction, my instinct was "then it must be regular — let me go build the DFA." @exr-pumping is the counterexample that makes that instinct impossible to keep: here the pumping argument doesn't just fail because I chose a clumsy string, it fails because **every** string genuinely pumps, and the language is non-regular anyway.
+
+What the lemma actually says is that pumpability is a *necessary* condition. Failing to derive a contradiction tells me nothing at all.
+
+::: {.remark}
+The tool that *does* characterize regularity is the Myhill–Nerode theorem: $L$ is regular if and only if $\equiv_L$ has finitely many equivalence classes. Applied here, the strings $ab, abb, abbb, \dots$ are pairwise inequivalent — $ab^m$ and $ab^n$ with $m \ne n$ are separated by the suffix $c^m$ — giving infinitely many classes and non-regularity directly, with no closure trick needed. That's a cleaner proof of Part 2, and I want to make it my default tool rather than my backup one.
+:::
+
+## References
+
+::: {#refs}
+:::

@@ -94,13 +94,15 @@ blockquote {
   font-family: "Source Serif 4", "Noto Serif KR", Georgia, serif;
 }
 
-.proof {
+// Quarto tags remarks and solutions with the `proof` class too,
+// so scope the proof-only styling to actual proofs.
+.proof:not(.remark):not(.solution) {
   margin: 1.2rem 0 1.6rem 0;
   padding-left: 1.1rem;
   border-left: 2px dashed var(--bs-border-color, #ccc);
 }
 
-.proof > *:last-child::after {
+.proof:not(.remark):not(.solution) > *:last-child::after {
   content: " ∎";
   font-weight: 700;
 }
