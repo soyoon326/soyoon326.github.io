@@ -4,17 +4,17 @@ project:
 
 website:
   title: "Soyoon's TCS Log"
-  description: "Study notes, proof reconstructions, and a research log on the road to theoretical computer science"
+  description: "이론 컴퓨터과학으로 가는 길에서 남기는 공부 기록, 증명 재구성, 연구 일지"
   site-url: https://soyoon326.github.io
   repo-url: https://github.com/soyoon326/soyoon326.github.io
   favicon: favicon.svg
   navbar:
     left:
-      - text: "Posts"
+      - text: "글"
         href: index.qmd
-      - text: "Timeline"
+      - text: "타임라인"
         href: timeline.qmd
-      - text: "About"
+      - text: "소개"
         href: about.qmd
     right:
       - icon: github
@@ -22,7 +22,7 @@ website:
       - icon: rss
         href: index.xml
   page-footer:
-    center: "© 2026 Soyoon Kim · Built with [Quarto](https://quarto.org)"
+    center: "© 2026 김소윤 · [Quarto](https://quarto.org)로 만들었습니다"
 
 format:
   html:
@@ -36,4 +36,22 @@ format:
     code-copy: true
     link-external-newwindow: true
 
-lang: en
+# 한국어 기본 날짜 형식("2026. 9. 1.")은 마크다운이 번호 목록으로
+# 잘못 해석하므로, 형식을 명시적으로 지정한다.
+date-format: "YYYY년 M월 D일"
+
+lang: ko
+
+# 정리·증명 환경의 이름을 한국어로 지정합니다.
+language:
+  crossref-thm-title: "정리"
+  crossref-lem-title: "보조정리"
+  crossref-cor-title: "따름정리"
+  crossref-prp-title: "명제"
+  crossref-cnj-title: "추측"
+  crossref-def-title: "정의"
+  crossref-exm-title: "예"
+  crossref-exr-title: "연습문제"
+  crossref-proof-title: "증명"
+  crossref-remark-title: "참고"
+  crossref-solution-title: "풀이"

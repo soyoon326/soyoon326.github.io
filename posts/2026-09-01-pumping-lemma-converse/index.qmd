@@ -1,97 +1,97 @@
 ---
-title: "Exercise: a non-regular language that survives the pumping lemma"
-description: "How I write up textbook exercises here — and a worked example that killed a misconception I'd been carrying."
+title: "연습문제: 펌핑 보조정리를 통과하는 비정규 언어"
+description: "이 블로그에서 교재 연습문제를 어떻게 기록하는지 — 그리고 내가 갖고 있던 오해를 깨뜨린 풀이 하나."
 date: 2026-09-01
-categories: [math notes, automata]
+categories: [수학 노트, 오토마타]
 bibliography: references.bib
 ---
 
-## How I write up exercises
+## 연습문제를 기록하는 방식
 
-A solved exercise is only worth posting if it contains something a reader can't get from the answer key. So every post in this category has to earn its place with at least one of:
+푼 문제를 그대로 옮겨 적기만 한 글은 올릴 이유가 없다. 답지를 보면 알 수 있는 내용이기 때문이다. 그래서 이 카테고리의 글은 적어도 다음 중 하나를 담고 있어야 한다는 기준을 두었다.
 
-- a **hard exercise** where the difficulty is in finding the idea, not in executing it,
-- an **alternative proof** that differs from the textbook's,
-- a **counterexample** I constructed, or
-- a **misconception** I held and had to unlearn.
+- 실행이 아니라 **아이디어를 찾는 것**이 어려웠던 문제
+- 교재와 다른 **대안 증명**
+- 내가 직접 구성한 **반례**
+- 내가 갖고 있다가 버려야 했던 **오해**
 
-The structure below is what I use. The last section is the important one — it's the part that records how my understanding actually changed, and it's the reason these posts are worth writing rather than just doing the exercise on paper.
+아래 구조가 내가 쓰는 형식이다. 이 중 가장 중요한 것은 마지막 절이다. 내 이해가 실제로 어떻게 바뀌었는지가 기록되는 부분이고, 이 글들을 종이에 푸는 대신 굳이 써서 남기는 이유이기도 하다.
 
-This one qualifies on the last two counts.
+이번 문제는 위 기준 중 뒤의 두 가지에 해당한다.
 
-## The question
+## 문제
 
 ::: {#exr-pumping}
-## Sipser, Exercise 1.54 (paraphrased)
+## Sipser, 연습문제 1.54 (의역)
 
-Let
+다음 언어를 생각하자.
 $$
-L = \{\, a^i b^j c^k \mid i, j, k \ge 0, \text{ and if } i \ge 1 \text{ then } j = k \,\}.
+L = \{\, a^i b^j c^k \mid i, j, k \ge 0, \ i \ge 1 \text{ 이면 } j = k \,\}.
 $$
-Show that $L$ satisfies the conclusion of the pumping lemma, but is not regular. [@sipser2012]
+$L$ 이 펌핑 보조정리의 결론을 만족하지만 정규언어가 아님을 보여라. [@sipser2012]
 :::
 
-Unpacking the definition: a string of $L$ either has no $a$'s at all — in which case the $b$'s and $c$'s are unconstrained — or it has at least one $a$, and then the $b$ block and $c$ block must match in length. So
+정의를 풀어 보면 이렇다. $L$ 의 문자열은 $a$ 가 하나도 없거나 — 이 경우 $b$ 와 $c$ 의 개수에는 아무 제약이 없다 — $a$ 가 하나 이상 있고, 그때는 $b$ 블록과 $c$ 블록의 길이가 같아야 한다. 즉
 
 $$
-L = \underbrace{\{\, b^j c^k \mid j,k \ge 0 \,\}}_{\text{no } a\text{'s: anything goes}} \;\cup\; \underbrace{\{\, a^i b^j c^j \mid i \ge 1,\, j \ge 0 \,\}}_{\text{at least one } a: \text{ must match}}.
+L = \underbrace{\{\, b^j c^k \mid j,k \ge 0 \,\}}_{a \text{ 없음: 제약 없음}} \;\cup\; \underbrace{\{\, a^i b^j c^j \mid i \ge 1,\, j \ge 0 \,\}}_{a \text{ 있음: 개수가 같아야 함}}.
 $$
 
-## Part 1: $L$ satisfies the pumping lemma
+## 1부: $L$ 은 펌핑 보조정리를 만족한다
 
 ::: {#prp-pumps}
-With pumping length $p = 1$, every $s \in L$ with $|s| \ge 1$ can be written as $s = xyz$ where $|xy| \le p$, $|y| \ge 1$, and $xy^m z \in L$ for all $m \ge 0$.
+펌핑 길이를 $p = 1$ 로 두면, $|s| \ge 1$ 인 모든 $s \in L$ 을 $|xy| \le p$, $|y| \ge 1$ 이면서 모든 $m \ge 0$ 에 대해 $xy^m z \in L$ 인 $s = xyz$ 로 분해할 수 있다.
 :::
 
 ::: {.proof}
-Take $x = \varepsilon$ and $y$ to be the first symbol of $s$, so $z$ is the rest. This satisfies $|xy| \le 1 = p$ and $|y| = 1 \ge 1$. Two cases, by that first symbol.
+$x = \varepsilon$ 로 두고 $y$ 를 $s$ 의 첫 글자로, $z$ 를 나머지로 잡는다. 그러면 $|xy| \le 1 = p$ 이고 $|y| = 1 \ge 1$ 이다. 그 첫 글자에 따라 두 경우로 나눈다.
 
-**Case 1: $s$ starts with $a$.** Then $i \ge 1$, so $s = a^i b^j c^j$ with matching blocks. Pumping the leading $a$ gives $a^{i - 1 + m} b^j c^j$.
+**경우 1: $s$ 가 $a$ 로 시작하는 경우.** 이때 $i \ge 1$ 이므로 $s = a^i b^j c^j$ 이고 두 블록의 길이가 같다. 맨 앞의 $a$ 를 펌핑하면 $a^{i - 1 + m} b^j c^j$ 가 된다.
 
-- If $m \ge 1$, the exponent $i - 1 + m \ge 1$, so we still need matching blocks — and they still match. In $L$.
-- If $m = 0$, the exponent is $i - 1$, which may be $0$. But if there are no $a$'s, no constraint applies at all. In $L$.
+- $m \ge 1$ 이면 지수가 $i - 1 + m \ge 1$ 이므로 여전히 블록 길이가 같아야 하는데, 실제로 같다. 따라서 $L$ 에 속한다.
+- $m = 0$ 이면 지수는 $i - 1$ 이고 이 값이 $0$ 이 될 수 있다. 그런데 $a$ 가 하나도 없으면 애초에 아무 제약이 없다. 따라서 이 경우에도 $L$ 에 속한다.
 
-**Case 2: $s$ starts with $b$ or $c$.** Then $i = 0$, and $s = b^j c^k$ with $j, k$ arbitrary. Pumping the first symbol changes only $j$ (or only $k$), and leaves the string of the form $b^{j'} c^{k'}$ with no $a$'s. Since strings without $a$'s are unconstrained, it is in $L$.
+**경우 2: $s$ 가 $b$ 또는 $c$ 로 시작하는 경우.** 이때 $i = 0$ 이고 $s = b^j c^k$ 이며 $j, k$ 는 임의다. 첫 글자를 펌핑하면 $j$ 만(또는 $k$ 만) 바뀌고, 결과는 여전히 $a$ 가 없는 $b^{j'} c^{k'}$ 꼴이다. $a$ 가 없는 문자열에는 제약이 없으므로 $L$ 에 속한다.
 
-In both cases $xy^m z \in L$ for every $m \ge 0$.
+두 경우 모두 임의의 $m \ge 0$ 에 대해 $xy^m z \in L$ 이다.
 :::
 
 ::: {.remark}
-Note what makes this work: the language has an **escape hatch**. Pumping down to $i = 0$ doesn't produce a string that violates the matching condition — it produces a string the matching condition doesn't apply to. The constraint isn't broken, it's switched off.
+이것이 왜 통하는지 짚어둘 필요가 있다. 이 언어에는 **비상구**가 있다. $i = 0$ 까지 펌핑해 내려가도 개수 조건을 위반하는 문자열이 나오는 것이 아니라, 개수 조건이 적용되지 않는 문자열이 나온다. 제약이 깨지는 것이 아니라 꺼지는 것이다.
 :::
 
-## Part 2: $L$ is not regular
+## 2부: $L$ 은 정규언어가 아니다
 
-The pumping lemma is now useless to me here, so I need a different tool. Closure properties give one.
+이제 펌핑 보조정리는 여기서 쓸모가 없으므로 다른 도구가 필요하다. 닫힘 성질이 하나를 제공한다.
 
 ::: {.proof}
-Suppose $L$ were regular. The language $a b^* c^*$ is regular, and regular languages are closed under intersection, so
+$L$ 이 정규언어라고 가정하자. $a b^* c^*$ 는 정규언어이고 정규언어는 교집합에 대해 닫혀 있으므로
 $$
 L \cap a b^* c^* = \{\, a b^j c^j \mid j \ge 0 \,\} =: M
 $$
-would be regular. The intersection is exactly this because a string in $a b^* c^*$ has $i = 1 \ge 1$, which forces $j = k$.
+역시 정규언어여야 한다. 교집합이 정확히 이 집합인 이유는, $a b^* c^*$ 에 속하는 문자열은 $i = 1 \ge 1$ 이어서 $j = k$ 가 강제되기 때문이다.
 
-Now apply the pumping lemma to $M$. Let $p$ be its pumping length and take $s = a b^p c^p \in M$, which has $|s| = 2p + 1 \ge p$. Any split $s = xyz$ with $|xy| \le p$ and $|y| \ge 1$ puts $y$ inside the prefix $a b^{p-1}$, so $y$ is one of:
+이제 $M$ 에 펌핑 보조정리를 적용한다. 펌핑 길이를 $p$ 라 하고 $s = a b^p c^p \in M$ 을 잡으면 $|s| = 2p + 1 \ge p$ 이다. $|xy| \le p$, $|y| \ge 1$ 인 임의의 분해 $s = xyz$ 에서 $y$ 는 접두사 $a b^{p-1}$ 안에 놓이므로 다음 둘 중 하나다.
 
-- $y = a b^t$ for some $t \ge 0$: then $xy^2z$ contains two $a$'s, and no string of $M$ has two $a$'s.
-- $y = b^t$ for some $t \ge 1$: then $xy^2z = a b^{p+t} c^p$, and $p + t \ne p$, so the blocks no longer match.
+- $y = a b^t$ ($t \ge 0$): 이때 $xy^2z$ 에는 $a$ 가 두 개 들어가는데, $M$ 의 어떤 문자열도 $a$ 를 두 개 갖지 않는다.
+- $y = b^t$ ($t \ge 1$): 이때 $xy^2z = a b^{p+t} c^p$ 이고 $p + t \ne p$ 이므로 두 블록의 길이가 더 이상 같지 않다.
 
-Either way $xy^2z \notin M$, contradicting the pumping lemma. So $M$ is not regular, and therefore neither is $L$.
+어느 쪽이든 $xy^2z \notin M$ 이므로 펌핑 보조정리에 모순이다. 따라서 $M$ 은 정규언어가 아니고, 그러므로 $L$ 도 정규언어가 아니다.
 :::
 
-## What I initially got wrong
+## 내가 처음에 잘못 알고 있던 것
 
-I had been treating the pumping lemma as if it *characterized* the regular languages — as though "pumpable" and "regular" were the same thing. Stated plainly like that it's obviously wrong: the lemma is a one-way implication, and a one-way implication can only ever be used to prove non-regularity, never regularity.
+나는 펌핑 보조정리를 정규언어의 **특징화**인 것처럼 다루고 있었다. 즉 "펌핑 가능하다"와 "정규언어다"가 같은 말인 것처럼 여겼다. 이렇게 대놓고 문장으로 쓰면 틀렸다는 게 명백하다. 이 보조정리는 한쪽 방향의 함의일 뿐이고, 한쪽 방향의 함의로는 비정규성만 증명할 수 있지 정규성은 결코 증명할 수 없다.
 
-But knowing that sentence and *using* it correctly turned out to be different things. My tell was that when a pumping argument failed to produce a contradiction, my instinct was "then it must be regular — let me go build the DFA." @exr-pumping is the counterexample that makes that instinct impossible to keep: here the pumping argument doesn't just fail because I chose a clumsy string, it fails because **every** string genuinely pumps, and the language is non-regular anyway.
+그런데 이 문장을 아는 것과 실제로 제대로 **쓰는** 것은 다른 일이었다. 내 증상은 이랬다. 펌핑 논증으로 모순을 못 이끌어내면 "그럼 정규언어겠네, DFA를 만들어 보자"는 쪽으로 반응했던 것이다. @exr-pumping 은 그 반응을 더 이상 유지할 수 없게 만드는 반례다. 여기서는 내가 문자열을 서툴게 골라서 펌핑 논증이 실패하는 것이 아니라, **모든** 문자열이 실제로 펌핑되는데도 언어는 정규언어가 아니다.
 
-What the lemma actually says is that pumpability is a *necessary* condition. Failing to derive a contradiction tells me nothing at all.
+이 보조정리가 실제로 말하는 것은 펌핑 가능성이 *필요조건*이라는 것뿐이다. 모순을 이끌어내지 못했다는 사실은 아무것도 알려주지 않는다.
 
 ::: {.remark}
-The tool that *does* characterize regularity is the Myhill–Nerode theorem: $L$ is regular if and only if $\equiv_L$ has finitely many equivalence classes. Applied here, the strings $ab, abb, abbb, \dots$ are pairwise inequivalent — $ab^m$ and $ab^n$ with $m \ne n$ are separated by the suffix $c^m$ — giving infinitely many classes and non-regularity directly, with no closure trick needed. That's a cleaner proof of Part 2, and I want to make it my default tool rather than my backup one.
+정규성을 실제로 *특징짓는* 도구는 마이힐–네로드 정리다. $L$ 이 정규언어일 필요충분조건은 $\equiv_L$ 의 동치류가 유한 개라는 것이다. 이 문제에 적용해 보면 $ab, abb, abbb, \dots$ 는 서로 동치가 아니다. $m \ne n$ 일 때 $ab^m$ 과 $ab^n$ 은 접미사 $c^m$ 으로 구분되기 때문이다. 따라서 동치류가 무한히 많고 비정규성이 바로 나온다. 닫힘 성질을 동원하는 우회 없이 말이다. 2부보다 깔끔한 증명이고, 앞으로는 이쪽을 예비 수단이 아니라 기본 도구로 삼으려 한다.
 :::
 
-## References
+## 참고문헌
 
 ::: {#refs}
 :::

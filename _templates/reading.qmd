@@ -1,19 +1,19 @@
 ---
-title: "Reading <book>, chapters X–Y"
-description: "Depth reached and the one idea worth keeping."
+title: "<책> X–Y장 읽기"
+description: "어느 깊이까지 읽었고, 남길 만한 것 하나."
 date: YYYY-MM-DD
-categories: [reading]
+categories: [독서]
 draft: true
 ---
 
-## Coverage
+## 범위
 
-Which chapters, at what depth (skimmed / read / all exercises done).
+어느 장을, 어떤 깊이로 (훑어봄 / 정독 / 연습문제까지).
 
-## The one idea worth keeping
+## 남길 만한 생각 하나
 
-Not a summary — the single insight I'd tell someone about.
+요약이 아니라, 누군가에게 말해주고 싶은 통찰 하나.
 
-## Exercises attempted
+## 시도한 연습문제
 
-Links to related math-notes posts for the hard ones.
+어려웠던 문제는 관련 수학 노트 글로 링크.

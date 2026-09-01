@@ -1,41 +1,42 @@
 ---
-title: "Reconstructing <result> from <paper/book>"
-description: "One-line summary of the result and what reconstructing it taught me."
+title: "<논문/책>의 <결과> 재구성하기"
+description: "어떤 결과이고, 재구성하면서 무엇을 배웠는지 한 줄로."
 date: YYYY-MM-DD
-categories: [paper proofs]
+categories: [논문 증명]
 bibliography: references.bib
 draft: true
 ---
 
-<!-- Copy this folder into posts/YYYY-MM-DD-slug/ and set draft: false when ready. -->
+<!-- 이 폴더를 posts/YYYY-MM-DD-슬러그/ 로 복사한 뒤,
+     완성되면 draft: true 줄을 지우세요. -->
 
-## The result
+## 결과
 
-::: {#thm-NAME}
-## Attribution
+::: {#thm-이름}
+## 출처
 
-Statement in my own words, with all quantifiers explicit.
+한정사를 모두 명시해서, 내 말로 진술한다.
 :::
 
-## My attempt before reading the proof
+## 증명을 읽기 전 나의 시도
 
-What I tried, how far I got, where intuition ran out.
+무엇을 시도했고, 어디까지 갔고, 어디서 직관이 끊겼는지.
 
-## The actual proof, reconstructed
+## 재구성한 증명
 
 ::: {.proof}
-Written from memory after reading — not transcribed.
+읽고 난 뒤 기억에 의존해서 다시 쓴 것. 옮겨 적은 것이 아니다.
 :::
 
-## Gaps I had to fill
+## 내가 채워 넣어야 했던 공백
 
-Every "clearly", "it is easy to see", "left to the reader" — spelled out.
+"자명하게", "쉽게 알 수 있듯이", "독자에게 맡긴다" — 전부 풀어서 적는다.
 
-## Stress-testing the theorem
+## 정리를 흔들어 보기
 
-Which hypotheses are load-bearing? What breaks if I weaken one? Counterexamples.
+어떤 가정이 실제로 일을 하고 있는가? 하나를 약화시키면 어디서 깨지는가? 반례.
 
-## References
+## 참고문헌
 
 ::: {#refs}
 :::

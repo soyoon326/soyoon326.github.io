@@ -1,23 +1,23 @@
 ---
-title: "Research log: <project> — week N"
-description: "What moved this week, in one line."
+title: "연구 일지: <프로젝트> — N주차"
+description: "이번 주에 움직인 것 한 줄로."
 date: YYYY-MM-DD
-categories: [research log]
+categories: [연구 일지]
 draft: true
 ---
 
-## Goal (unchanged / revised)
+## 목표 (유지 / 수정)
 
-Current problem statement, as precisely as I can state it today.
+오늘 시점에서 최대한 정확하게 진술한 현재 문제.
 
-## What I tried
+## 시도한 것
 
-Approaches attempted this week, including dead ends and *why* they died.
+이번 주에 시도한 접근들. 막다른 길과 *왜* 막혔는지도 함께.
 
-## What I learned
+## 알게 된 것
 
-Partial results, sharpened conjectures, relevant literature found.
+부분적인 결과, 더 날카로워진 추측, 새로 찾은 관련 문헌.
 
-## Next
+## 다음
 
-The single most promising next step, and why.
+가장 유망한 다음 한 걸음과 그 이유.

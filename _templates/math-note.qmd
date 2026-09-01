@@ -1,26 +1,25 @@
 ---
-title: "<Topic>: an exercise / counterexample / alternative proof"
-description: "What's non-obvious here, in one line."
+title: "<주제>: 연습문제 / 반례 / 대안 증명"
+description: "여기서 자명하지 않은 지점이 무엇인지 한 줄로."
 date: YYYY-MM-DD
-categories: [math notes]
+categories: [수학 노트]
 draft: true
 ---
 
-<!-- Not a summary. Only things with my own contribution:
-     a hard exercise, an alternative proof, a counterexample,
-     or a misconception I had to unlearn. -->
+<!-- 요약 정리가 아니다. 내 몫이 들어간 것만 쓴다.
+     어려운 연습문제, 대안 증명, 반례, 또는 버려야 했던 오해. -->
 
-## The question
+## 문제
 
-::: {#exr-NAME}
-Source (book, chapter, problem number) and statement.
+::: {#exr-이름}
+출처(책, 장, 문제 번호)와 문제 진술.
 :::
 
-## Solution
+## 풀이
 
 ::: {.proof}
 :::
 
-## What I initially got wrong
+## 내가 처음에 잘못 알고 있던 것
 
-The misconception, and the example that killed it.
+어떤 오해였고, 그것을 깨뜨린 예시는 무엇이었는지.
